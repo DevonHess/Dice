@@ -1,0 +1,65 @@
+body {
+	margin: 0px;
+	font-family: monospace;
+	color: black;
+	background: black;
+	text-align: center;
+	font-size: 50px;
+}
+
+a {
+	color: black;
+}
+
+.tray {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.die {
+	display: inline-block;
+	background: white;
+	height: 100px;
+	width: 100px;
+	margin: 5px;
+	border-radius: 20px;
+	animation: flip .5s;
+}
+
+.alt {
+	background: silver;
+}
+
+.total {
+	display: block;
+	padding: 20px;
+	background: transparent;
+	color: white;
+}
+
+.cont {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+}
+
+.number {
+	margin-top: 50%;
+	transform: translateY(-50%);
+}
+
+@keyframes flip {
+	0% {
+		transform: rotateX(360deg);
+		color: transparent;
+	}
+	49% {
+		color: transparent;
+	}
+	50% {
+		color: black;
+	}
+	100% {
+		transform: rotateX(0deg);
+	}
+}
