@@ -1,5 +1,26 @@
 ﻿window.onload = window.onclick = window.onhashchange = function(){roll();}
 
+demo = [
+	['2', 'Coin', false, '[Heads,Tails]'],
+	['3', 'D3', false, '3'],
+	['4', 'D4', false, '4'],
+	['6', 'D6', false, '6'],
+	['8', 'D8', false, '8'],
+	['10', 'D10', false, '0-9'],
+	['12', 'D12', false, '12'],
+	['20', 'D20', false, '20'],
+	['6x2', 'D6x2', true, '6x2'],
+	['20,10', '20,10', true, '20,10'],
+	['20|10', '20|10', true, '20|10'],
+	['1-100', '1-100', true, '1-100'],
+	['A-Z', 'Alphabet', true, 'A-Z'],
+	['[5,10,15]', '[5,10,15]', true, '[5,10,15]'],
+	['⚅', '⚅', true, '[⚀,⚁,⚂,⚃,⚄,⚅]'],
+	['Boggle', 'Boggle', true, '[A,A,E,E,G,N],[A,B,B,J,O,O],[A,C,H,O,P,S],[A,F,F,K,P,S],[A,O,O,T,T,W],[C,I,M,O,T,U],[D,E,I,L,R,X],[D,E,L,R,V,Y],[D,I,S,T,T,Y],[E,E,G,H,N,W],[E,E,I,N,S,U],[E,H,R,T,V,W],[E,I,O,S,S,T],[E,L,R,T,T,Y],[H,I,M,N,U,Qu],[H,L,N,N,R,Z]'],
+	['Twister', 'Twister', true, '[Right,Left],[Hand ✋,Foot 🦶],[<span style="color:Green">Green</span>,<span style="color:Gold">Yellow</span>,<span style="color:Blue">Blue</span>,<span style="color:Red">Red</span>]'],
+	['Dreidel', 'Dreidel', true, '[נ,ג,ה,ש]']
+];
+
 function rand(min, max) {
 	return Math.round(Math.random() * (max - min)) + min;
 }
@@ -42,26 +63,6 @@ function roll() {
 	}
 	if (!document.location.hash) {
 		createTray('100%');
-		demo = [
-			['2', 'Coin', false, '[Heads,Tails]'],
-			['3', 'D3', false, '3'],
-			['4', 'D4', false, '4'],
-			['6', 'D6', false, '6'],
-			['8', 'D8', false, '8'],
-			['10', 'D10', false, '0-9'],
-			['12', 'D12', false, '12'],
-			['20', 'D20', false, '20'],
-			['6x2', 'D6x2', true, '6x2'],
-			['20,10', '20,10', true, '20,10'],
-			['20|10', '20|10', true, '20|10'],
-			['1-100', '1-100', true, '1-100'],
-			['A-Z', 'Alphabet', true, 'A-Z'],
-			['[5,10,15]', '[5,10,15]', true, '[5,10,15]'],
-			['⚅', '⚅', true, '[⚀,⚁,⚂,⚃,⚄,⚅]'],
-			['Boggle', 'Boggle', true, '[A,A,E,E,G,N],[A,B,B,J,O,O],[A,C,H,O,P,S],[A,F,F,K,P,S],[A,O,O,T,T,W],[C,I,M,O,T,U],[D,E,I,L,R,X],[D,E,L,R,V,Y],[D,I,S,T,T,Y],[E,E,G,H,N,W],[E,E,I,N,S,U],[E,H,R,T,V,W],[E,I,O,S,S,T],[E,L,R,T,T,Y],[H,I,M,N,U,Qu],[H,L,N,N,R,Z]'],
-			['Twister', 'Twister', true, '[Right,Left],[Hand 👐,Foot 👣],[<span style="color:Green">Green</span>,<span style="color:Gold">Yellow</span>,<span style="color:Blue">Blue</span>,<span style="color:Red">Red</span>]'],
-			['Dreidel', 'Dreidel', true, '[נ,ג,ה,ש]']
-		];
 		for (i = 0; i < demo.length; i++) {
 			createDie(demo[i][0], demo[i][1], demo[i][2], demo[i][3]);
 		}
